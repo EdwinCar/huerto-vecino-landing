@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="es-BO">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Huerto Vecino · Huertos urbanos con IA para La Paz</title>
+  <meta name="description" content="Huerto Vecino es la app Android gratuita para cultivar en casa en Koani y Alto Irpavi (La Paz, 3.600 m): sensores y clima, diagnóstico de plantas por foto con IA, plan de cuidados con alarmas, comunidad del barrio y Sami, tu ingeniera agrónoma virtual.">
+  <meta name="theme-color" content="#2E7D3E">
+  <meta property="og:title" content="Huerto Vecino · Tu huerto en casa, guiado por Sami">
+  <meta property="og:description" content="App gratuita para familias que cultivan en balcones, patios y terrazas del altiplano. Descarga el APK.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/hero-huerto.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#inicio" aria-label="Huerto Vecino, inicio">
+      <span class="brand__mark">
+        <svg viewBox="0 0 108 108" aria-hidden="true"><path fill="currentColor" d="M54,22 C40,22 30,34 30,50 C30,66 44,80 54,86 C64,80 78,66 78,50 C78,34 68,22 54,22 Z"/><path fill="none" stroke="#E3EFDC" stroke-width="4" stroke-linecap="round" d="M54,30 L54,84 M54,46 L40,40 M54,58 L68,52 M54,70 L42,64"/></svg>
+      </span>
+      <span class="brand__text">Huerto<b>Vecino</b></span>
+    </a>
+    <nav class="nav__links" aria-label="Secciones">
+      <a href="#funciones">Qué hace</a>
+      <a href="#sami">Sami</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#especies">Especies</a>
+      <a href="#comunidad">Comunidad</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--primary btn--sm" href="#descargar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Descargar APK
+      </a>
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="#funciones">Qué hace</a>
+    <a href="#sami">Sami</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#especies">Especies</a>
+    <a href="#comunidad">Comunidad</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#descargar" class="btn btn--primary">Descargar APK</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="blob blob--a" aria-hidden="true"></div>
+  <div class="blob blob--b" aria-hidden="true"></div>
+  <div class="blob blob--c" aria-hidden="true"></div>
+  <div class="leaves" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow" data-reveal>
+        <span class="eyebrow__dot"></span>
+        App Android gratuita · Koani y Alto Irpavi · La Paz, 3.600 m
+      </span>
+      <h1 class="hero__title" data-split>
+        Tu huerto en casa, <em>guiado por Sami</em> y por tu barrio.
+      </h1>
+      <p class="hero__lead" data-reveal>
+        Siembra en tu balcón, patio o terraza y deja que <strong>Huerto Vecino</strong> te acompañe
+        desde la semilla hasta la cosecha: clima y sensores en tiempo real, diagnóstico de plantas por foto
+        con inteligencia artificial, alarmas de riego y heladas, y una comunidad que comparte lo que funciona.
+      </p>
+      <div class="hero__actions" data-reveal>
+        <a class="btn btn--primary btn--lg" href="#descargar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Descargar el APK
+          <small class="btn__meta" id="heroApkSize">Android 8.0+</small>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#como-funciona">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4z"/></svg>
+          Ver cómo funciona
+        </a>
+      </div>
+      <ul class="hero__stats" data-reveal>
+        <li><b data-count="16">0</b><span>especies del altiplano</span></li>
+        <li><b data-count="14">0</b><span>guías paso a paso</span></li>
+        <li><b data-count="3600" data-format="miles">0</b><span>metros de altura</span></li>
+        <li><b>100%</b><span>gratis y sin anuncios</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__visual">
+      <figure class="float-card float-card--a" data-parallax="-40">
+        <img src="assets/img/manos-semillas.jpg" alt="Manos sembrando plantines en un cajón con tierra" loading="eager" width="520" height="347">
+        <figcaption><span class="dot dot--ok"></span>Siembra registrada · Lechuga</figcaption>
+      </figure>
+
+      <div class="phone" data-parallax="-12">
+        <div class="phone__frame">
+          <div class="phone__notch"></div>
+          <div class="screen">
+            <div class="screen__top">
+              <div>
+                <small>Buenos días</small>
+                <strong>Familia Huanca</strong>
+              </div>
+              <span class="screen__zone">Alto Irpavi</span>
+            </div>
+            <div class="screen__env">
+              <div class="env env--water"><small>Humedad</small><b>41%</b></div>
+              <div class="env env--temp"><small>Temp.</small><b>13°</b></div>
+              <div class="env env--sun"><small>Luz</small><b>Alta</b></div>
+            </div>
+            <div class="screen__alert">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/><circle cx="12" cy="12" r="4"/></svg>
+              <span>Helada esta noche: <b>cubre tus plantas</b> antes de las 18:00</span>
+            </div>
+            <p class="screen__label">Tareas de hoy</p>
+            <ul class="tasks">
+              <li class="task"><span class="task__check"></span><span>Regar la lechuga <small>· 0,5 L</small></span><em>+5</em></li>
+              <li class="task"><span class="task__check"></span><span>Revisar luz del tomate</span><em>+3</em></li>
+              <li class="task"><span class="task__check"></span><span>Foto de control de la acelga</span><em>+4</em></li>
+            </ul>
+            <p class="screen__label">Mis plantas</p>
+            <ul class="plants">
+              <li><i class="dot dot--ok"></i><span>Lechuga <small>Crecimiento</small></span><b class="ok">Bien</b></li>
+              <li><i class="dot dot--warn"></i><span>Tomate cherry <small>Plántula</small></span><b class="warn">Atención</b></li>
+              <li><i class="dot dot--ok"></i><span>Acelga <small>Cosecha</small></span><b class="ok">Lista</b></li>
+            </ul>
+            <button class="sami-fab" type="button" aria-label="Sami, asistente de voz">
+              <span class="sami-fab__ring"></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+            </button>
+            <nav class="screen__nav">
+              <span class="active">Mi huerto</span><span>Comunidad</span><span>Mi hogar</span>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <figure class="float-card float-card--b" data-parallax="-70">
+        <img src="assets/img/balcon-tomates.jpg" alt="Tomates cherry creciendo en una maceta de balcón" loading="eager" width="520" height="347">
+        <figcaption><span class="dot dot--warn"></span>Diagnóstico listo · Pulgón, muy probable</figcaption>
+      </figure>
+
+      <div class="chip-float chip-float--a" data-parallax="-25">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        “Hola, soy Sami. Hoy toca regar temprano.”
+      </div>
+      <div class="chip-float chip-float--b" data-parallax="-55">
+        <b>+12</b> puntos para Valeria
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-hint" href="#contexto" aria-label="Bajar"><span></span></a>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Lechuga</span><span>Acelga</span><span>Espinaca</span><span>Zanahoria</span><span>Albahaca</span><span>Perejil</span><span>Cilantro</span><span>Rábano</span><span>Tomate cherry</span><span>Haba</span><span>Papa</span><span>Cebolla verde</span><span>Brócoli</span><span>Frutilla</span><span>Locoto</span><span>Quinua</span>
+    <span>Lechuga</span><span>Acelga</span><span>Espinaca</span><span>Zanahoria</span><span>Albahaca</span><span>Perejil</span><span>Cilantro</span><span>Rábano</span><span>Tomate cherry</span><span>Haba</span><span>Papa</span><span>Cebolla verde</span><span>Brócoli</span><span>Frutilla</span><span>Locoto</span><span>Quinua</span>
+  </div>
+</div>
+
+<!-- ================= CONTEXTO ================= -->
+<section class="section context" id="contexto">
+  <div class="container context__grid">
+    <div class="context__media" data-reveal>
+      <figure class="media media--tall">
+        <img src="assets/img/hero-huerto.jpg" alt="Dos vecinos cuidando cajones de cultivo en un huerto comunitario" loading="lazy" width="1800" height="1286" data-parallax-img>
+      </figure>
+      <figure class="media media--small" data-parallax="-50">
+        <img src="assets/img/regadera.jpg" alt="Persona regando plantines con una regadera verde" loading="lazy" width="1000" height="1500">
+      </figure>
+      <div class="badge-float" data-parallax="-30">
+        <b>−2 °C</b><span>mínima prevista esta noche</span>
+      </div>
+    </div>
+    <div class="context__copy">
+      <span class="eyebrow" data-reveal>Pensada para el altiplano</span>
+      <h2 class="h2" data-reveal>Cultivar a 3.600 metros tiene sus trucos. <em>La app los conoce.</em></h2>
+      <p data-reveal>
+        En Koani y Alto Irpavi el sol del mediodía quema, las noches hielan y el agua se evapora rápido.
+        Huerto Vecino combina los <strong>sensores de tu teléfono</strong> con datos abiertos de
+        <strong>Open-Meteo</strong> (humedad del suelo, índice UV, nubosidad, pronóstico horario y mínima nocturna)
+        para avisarte justo cuando una planta necesita ayuda.
+      </p>
+      <ul class="checks" data-reveal>
+        <li><i></i>Alerta de helada a las 18:00 cuando la mínima baja de 2 °C.</li>
+        <li><i></i>Aviso de sol fuerte y sombra recomendada al mediodía.</li>
+        <li><i></i>Riego calculado por especie, maceta y clima del día.</li>
+        <li><i></i>Funciona completa sin internet; se sincroniza cuando vuelve la señal.</li>
+      </ul>
+      <div class="context__facts" data-reveal>
+        <div><b>Koani</b><span>zona rural, suelo y patio</span></div>
+        <div><b>Alto Irpavi</b><span>balcones y terrazas</span></div>
+        <div><b>Autónomo · Híbrido · Integral</b><span>tres paquetes de acompañamiento</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUNCIONES (BENTO) ================= -->
+<section class="section features" id="funciones">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>Qué hace la app</span>
+      <h2 class="h2" data-reveal>Todo lo que necesita una familia huertera, <em>en una sola app.</em></h2>
+      <p data-reveal>Doce módulos conectados: desde el onboarding por voz hasta el resumen semanal del barrio.</p>
+    </div>
+
+    <div class="bento">
+      <article class="bento__card bento__card--xl bento__card--photo" data-reveal>
+        <img src="assets/img/cuidando-tomates.jpg" alt="Hombre atendiendo tomates en cajones de madera" loading="lazy" width="1400" height="933">
+        <div class="bento__overlay">
+          <span class="bento__icon"><svg viewBox="0 0 24 24"><path d="M4 7h3l2-3h6l2 3h3v12H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+          <h3>Diagnóstico por foto con IA</h3>
+          <p>Cámara o galería → la app descarta fotos borrosas, valida que sea una planta y la IA de visión
+            devuelve síntomas, confianza en palabras, <b>receta casera</b> y <b>opción química</b> con precauciones.
+            Cada diagnóstico abre un caso con línea de tiempo.</p>
+        </div>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--sun"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2M5 19l2-2M17 7l2-2"/></svg></span>
+        <h3>Inicio / Mi huerto</h3>
+        <p>Humedad, temperatura y luz de tu zona, alertas de helada y sol fuerte, tareas de hoy y semáforo por planta.</p>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--leaf"><svg viewBox="0 0 24 24"><path d="M5 20c0-9 5-14 14-14-1 9-6 14-14 14Z"/><path d="M5 20 15 10"/></svg></span>
+        <h3>Crea tu plantita</h3>
+        <p>16 especies con perfil agronómico. Elige variedad, lugar y contenedor y recibe un <b>plan estricto</b> hasta la cosecha con notificaciones programadas.</p>
+      </article>
+
+      <article class="bento__card bento__card--sami" data-reveal>
+        <span class="bento__icon bento__icon--sami"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+        <h3>Chat con Sami</h3>
+        <p>Chat agronómico que conoce tus plantas, su etapa y el clima actual. Envía fotos, escucha cada respuesta en voz alta y sigue conversando sin internet en modo básico.</p>
+        <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </article>
+
+      <article class="bento__card bento__card--wide" data-reveal>
+        <span class="bento__icon bento__icon--soil"><svg viewBox="0 0 24 24"><path d="M3 20h18M7 20V9l5-4 5 4v11M10 20v-5h4v5"/></svg></span>
+        <h3>Comunidad: el muro del barrio</h3>
+        <p>Publicaciones de cosecha (con kilos), aprendizaje, preguntas y ofrezco/busco con foto o video de hasta 30 s.
+          Me gusta, comentarios con foto y “a mí también me funcionó”. <b>Sami responde las preguntas</b> y arma el resumen semanal. Envío directo al grupo de WhatsApp.</p>
+        <div class="post-mini">
+          <div class="post-mini__avatar">FH</div>
+          <div><b>Familia Huanca</b> · Cosecha · <span>2,3 kg de acelga</span><p>Probé el té de humus y la hoja se puso más verde en una semana.</p></div>
+          <div class="post-mini__likes">♥ 18</div>
+        </div>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--water"><svg viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11Z"/></svg></span>
+        <h3>Perfil de cada planta</h3>
+        <p>Etapa y progreso, tareas de hoy / semana / todo con puntos por integrante, plagas a vigilar, ficha técnica y registro de cosecha.</p>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--alert"><svg viewBox="0 0 24 24"><path d="M12 9v4m0 4h.01M10.3 3.9 2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span>
+        <h3>Seguimiento del caso</h3>
+        <p>“Ya lo apliqué” programa un recordatorio a los 5 días; “No mejoró” escala a visita técnica con llamar o escribir.</p>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--gold"><svg viewBox="0 0 24 24"><path d="M8 21h8m-4-4v4M6 3h12v5a6 6 0 0 1-12 0V3Z"/><path d="M6 5H3v2a4 4 0 0 0 4 4M18 5h3v2a4 4 0 0 1-4 4"/></svg></span>
+        <h3>Mi hogar</h3>
+        <p>Integrantes con avatar y rol, niveles de <b>Semillita</b> a <b>Guardián del huerto</b>, ranking, 8 insignias y misión familiar de la semana.</p>
+      </article>
+
+      <article class="bento__card bento__card--wide" data-reveal>
+        <span class="bento__icon bento__icon--leaf"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 4v16M4 9h16"/></svg></span>
+        <h3>Guías y herramientas</h3>
+        <p>14 guías paso a paso (almácigo, goteo con botella, compost en balde, heladas, huerto con niños y abuelos…), recetario,
+          fichas de especies, calculadora de riego, calendario de siembra mensual, peso sin balanza y compañeras de cultivo.</p>
+        <div class="tags">
+          <span>Calculadora de riego</span><span>Calendario de siembra</span><span>Alerta de heladas</span><span>Peso sin balanza</span><span>Compañeras de cultivo</span>
+        </div>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--sami"><svg viewBox="0 0 24 24"><path d="M3 10v4a2 2 0 0 0 2 2h2l5 4V4L7 8H5a2 2 0 0 0-2 2Z"/><path d="M16 9a4 4 0 0 1 0 6m2.5-9a8 8 0 0 1 0 12"/></svg></span>
+        <h3>Voz de Sami</h3>
+        <p>Explica cada pantalla la primera vez, da pistas al tocar botones y lee recetas y diagnósticos. Voz del teléfono o ElevenLabs.</p>
+      </article>
+
+      <article class="bento__card" data-reveal>
+        <span class="bento__icon bento__icon--soil"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></span>
+        <h3>Ajustes abiertos</h3>
+        <p>Claves de IA editables sin recompilar, proveedor preferido, pruebas de voz y notificaciones, borrado local.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SAMI ================= -->
+<section class="section sami" id="sami">
+  <div class="sami__glow" aria-hidden="true"></div>
+  <div class="container sami__grid">
+    <div class="sami__copy">
+      <span class="eyebrow eyebrow--light" data-reveal>Conoce a Sami</span>
+      <h2 class="h2" data-reveal>Una ingeniera agrónoma virtual que <em>habla tu idioma</em> y conoce tu huerto.</h2>
+      <p data-reveal>
+        Sami guía cada pantalla con voz, responde en el chat con el contexto de tus plantas y del clima de hoy,
+        analiza fotos para detectar plagas o deficiencias y contesta automáticamente las preguntas del muro del barrio.
+      </p>
+      <ul class="sami__list" data-reveal>
+        <li>
+          <b>Visión</b>
+          <span>Llama 4 Scout (Groq) → Gemini 2.5 Flash → Edge Function → heurística local sin internet.</span>
+        </li>
+        <li>
+          <b>Voz</b>
+          <span>Texto a voz del teléfono en español o voz natural de ElevenLabs si configuras la clave.</span>
+        </li>
+        <li>
+          <b>Contexto</b>
+          <span>Sabe qué cultivas, en qué etapa está cada planta y cuál es la mínima de esta noche.</span>
+        </li>
+        <li>
+          <b>Comunidad</b>
+          <span>Responde preguntas del muro y redacta el resumen semanal del barrio.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="chat" data-reveal>
+      <div class="chat__head">
+        <span class="chat__avatar"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+        <div><b>Sami</b><small>ingeniera agrónoma virtual · en línea</small></div>
+        <div class="wave wave--light" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="chat__body" id="chatBody">
+        <div class="msg msg--user">Sami, mi tomate cherry tiene hojas amarillas abajo. ¿Qué hago?</div>
+        <div class="msg msg--sami">Hola Valeria. Tu tomate está en etapa de <b>plántula</b> y anoche hubo 1 °C en Alto Irpavi. Las hojas amarillas de abajo suelen ser frío o falta de nitrógeno.</div>
+        <div class="msg msg--sami">Hoy: riega solo 0,4 L al mediodía, cúbrelo desde las 18:00 y mañana aplica <b>té de humus</b>. ¿Quieres que te mande una foto de control en 5 días?</div>
+        <div class="msg msg--user">Sí, por favor.</div>
+        <div class="msg msg--sami">Listo. Recordatorio programado para el jueves a las 8:00. <span class="msg__tag">Receta casera guardada</span></div>
+        <div class="msg msg--typing"><i></i><i></i><i></i></div>
+      </div>
+      <div class="chat__input">
+        <span>Escribe o toca el micrófono…</span>
+        <button type="button" aria-label="Hablar con Sami"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4v5a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIAGNÓSTICO ================= -->
+<section class="section diagnosis">
+  <div class="container diagnosis__grid">
+    <div class="scan" data-reveal>
+      <img src="assets/img/cosecha-acelga.jpg" alt="Manos con guantes verdes cosechando una acelga" loading="lazy" width="1000" height="1500">
+      <div class="scan__line" aria-hidden="true"></div>
+      <div class="scan__corner scan__corner--tl"></div><div class="scan__corner scan__corner--tr"></div><div class="scan__corner scan__corner--bl"></div><div class="scan__corner scan__corner--br"></div>
+      <div class="scan__status"><span class="dot dot--ok"></span>Es una planta · nitidez OK · analizando…</div>
+      <div class="result">
+        <div class="result__head"><span class="dot dot--warn"></span><b>Pulgón</b><span>muy probable</span></div>
+        <p>Hojas enrolladas y melaza brillante en el envés. Colonia pequeña: se puede controlar en casa.</p>
+        <div class="recipe">
+          <b>Receta casera</b>
+          <span>Jabón potásico 5 ml/L + 2 gotas de aceite vegetal. Rociar al atardecer 3 días seguidos.</span>
+        </div>
+        <div class="recipe recipe--chem">
+          <b>Opción química</b>
+          <span>Imidacloprid 0,5 ml/L solo si no mejora. Usa guantes y espera 7 días para cosechar.</span>
+        </div>
+      </div>
+    </div>
+    <div class="diagnosis__copy">
+      <span class="eyebrow" data-reveal>Diagnóstico por foto</span>
+      <h2 class="h2" data-reveal>Una foto, un caso, <em>una solución a tu alcance.</em></h2>
+      <ol class="steps-mini" data-reveal>
+        <li><b>1</b><span><strong>Validación local.</strong> Detecta foto borrosa u oscura (varianza del laplaciano) y pide repetir.</span></li>
+        <li><b>2</b><span><strong>¿Es una planta?</strong> La IA responde <code>is_plant=false</code> y Sami lo explica con voz.</span></li>
+        <li><b>3</b><span><strong>Diagnóstico en JSON.</strong> Confianza en palabras, síntomas, receta casera (control biológico) y química con precauciones.</span></li>
+        <li><b>4</b><span><strong>Caso con número.</strong> Línea de tiempo, foto comparativa, escalado a visita técnica y “compartir qué funcionó”.</span></li>
+      </ol>
+      <div class="providers" data-reveal>
+        <span>Groq · Llama 4 Scout</span><span>Gemini 2.5 Flash</span><span>Edge Functions</span><span>Heurística offline</span><span>Pl@ntNet (reservado)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section class="section how" id="como-funciona">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>Cómo funciona</span>
+      <h2 class="h2" data-reveal>De la semilla a la cosecha <em>en cinco pasos.</em></h2>
+    </div>
+    <ol class="timeline">
+      <li class="timeline__item" data-reveal>
+        <span class="timeline__num">01</span>
+        <h3>Registra tu hogar</h3>
+        <p>Nombre de la familia, zona, paquete, dónde está el huerto, experiencia, metas y minutos al día. Sami te guía por voz.</p>
+      </li>
+      <li class="timeline__item" data-reveal>
+        <span class="timeline__num">02</span>
+        <h3>Crea tu plantita</h3>
+        <p>Elige especie, variedad y contenedor. Define horarios de riego y la app genera el plan completo con alarmas.</p>
+      </li>
+      <li class="timeline__item" data-reveal>
+        <span class="timeline__num">03</span>
+        <h3>Cumple las tareas</h3>
+        <p>Riegos por etapa, raleo, trasplante, aporque, abonos, fotos de control y protección de heladas. Cada tarea suma puntos.</p>
+      </li>
+      <li class="timeline__item" data-reveal>
+        <span class="timeline__num">04</span>
+        <h3>Diagnostica a tiempo</h3>
+        <p>Si algo se ve raro, toma una foto. Recibe receta casera y seguimiento del caso hasta que mejore.</p>
+      </li>
+      <li class="timeline__item" data-reveal>
+        <span class="timeline__num">05</span>
+        <h3>Cosecha y comparte</h3>
+        <p>Registra los kilos (aunque no tengas balanza), gana insignias y cuéntale al barrio qué te funcionó.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= BALCONES ================= -->
+<section class="section balconies" id="balcones">
+  <div class="container">
+    <div class="section__head section__head--left">
+      <span class="eyebrow" data-reveal>Huertos en balcones, patios y terrazas</span>
+      <h2 class="h2" data-reveal>No necesitas tierra. <em>Necesitas un rincón con sol.</em></h2>
+      <p data-reveal>Macetas, cajones, botellas de goteo y un poco de sombra al mediodía bastan para cosechar en un departamento.
+        La app adapta el plan según el lugar que elijas: balcón, patio, terraza, ventana, maceta grande o jardín.</p>
+    </div>
+  </div>
+  <div class="gallery">
+    <figure class="gallery__item" data-reveal><img src="assets/img/balcon-terraza.jpg" alt="Balcón pequeño lleno de macetas con una mesa redonda" loading="lazy" width="1600" height="1035"><figcaption>Balcón · macetas y mesa de riego</figcaption></figure>
+    <figure class="gallery__item" data-reveal><img src="assets/img/balcon-hombre-tomates.jpg" alt="Hombre sonriendo junto a una maceta de tomates cherry en un balcón" loading="lazy" width="1200" height="1600"><figcaption>Tomate cherry en maceta de 20 L</figcaption></figure>
+    <figure class="gallery__item" data-reveal><img src="assets/img/balcon-macetas.jpg" alt="Balcón de una casa blanca con macetas de hierbas y flores" loading="lazy" width="1000" height="1500"><figcaption>Hierbas aromáticas en baranda</figcaption></figure>
+    <figure class="gallery__item" data-reveal><img src="assets/img/balcon-flores.jpg" alt="Pared de balcón con macetas colgantes de flores" loading="lazy" width="1000" height="1500"><figcaption>Jardín vertical con macetas colgantes</figcaption></figure>
+    <figure class="gallery__item" data-reveal><img src="assets/img/balcon-tomates.jpg" alt="Tomates cherry rojos en una maceta con tutor de caña" loading="lazy" width="1200" height="800"><figcaption>Tutor de caña y riego por goteo</figcaption></figure>
+    <figure class="gallery__item" data-reveal><img src="assets/img/plantando-flores.jpg" alt="Mujer plantando en un cantero junto a una ventana" loading="lazy" width="1000" height="1500"><figcaption>Cantero bajo la ventana</figcaption></figure>
+  </div>
+</section>
+
+<!-- ================= ESPECIES ================= -->
+<section class="section species" id="especies">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>Catálogo agronómico</span>
+      <h2 class="h2" data-reveal>16 especies con perfil <em>para el altiplano.</em></h2>
+      <p data-reveal>Cada ficha incluye días a cosecha, horas de sol, tolerancia a heladas, plagas frecuentes, compañeras de cultivo, meses ideales en La Paz y rendimiento estimado.</p>
+    </div>
+    <div class="filters" role="tablist" data-reveal>
+      <button class="filter active" data-filter="all" role="tab" aria-selected="true">Todas</button>
+      <button class="filter" data-filter="easy" role="tab">Fáciles</button>
+      <button class="filter" data-filter="frost" role="tab">Toleran heladas</button>
+      <button class="filter" data-filter="fast" role="tab">Rápidas (≤ 50 días)</button>
+      <button class="filter" data-filter="yield" role="tab">Más kilos</button>
+    </div>
+    <div class="species__grid" id="speciesGrid"></div>
+  </div>
+</section>
+
+<!-- ================= COMUNIDAD / FAMILIA ================= -->
+<section class="section community" id="comunidad">
+  <div class="container community__grid">
+    <div class="community__copy">
+      <span class="eyebrow" data-reveal>Comunidad y familia</span>
+      <h2 class="h2" data-reveal>El huerto crece mejor <em>cuando lo cuidan todos.</em></h2>
+      <p data-reveal>Cada integrante tiene su avatar, rol y puntos. Los niños riegan y cosechan, los abuelos comparten recetas y
+        el barrio entero aprende en el muro. Sami arma el resumen de la semana y las métricas por zona ayudan al equipo técnico.</p>
+      <div class="levels" data-reveal>
+        <div class="level"><i></i><b>Semillita</b><span>primeras tareas</span></div>
+        <div class="level__line"></div>
+        <div class="level"><i></i><b>Cosechador</b><span>kilos registrados</span></div>
+        <div class="level__line"></div>
+        <div class="level"><i></i><b>Guardián del huerto</b><span>casos resueltos y vecinos ayudados</span></div>
+      </div>
+      <ul class="badges" data-reveal>
+        <li><span class="badge badge--bronze">Primera semilla</span></li>
+        <li><span class="badge badge--bronze">Manos a la tierra</span></li>
+        <li><span class="badge badge--silver">Primera cosecha</span></li>
+        <li><span class="badge badge--silver">Doctora de plantas</span></li>
+        <li><span class="badge badge--silver">Vecina que comparte</span></li>
+        <li><span class="badge badge--gold">Cinco kilos</span></li>
+        <li><span class="badge badge--gold">Familia huertera</span></li>
+        <li><span class="badge badge--gold">Huerto estrella</span></li>
+      </ul>
+    </div>
+    <div class="community__media">
+      <figure class="media media--round" data-reveal data-parallax="-30">
+        <img src="assets/img/cosecha-tomates.jpg" alt="Dos personas sostienen un cuenco con tomates recién cosechados" loading="lazy" width="1200" height="800">
+      </figure>
+      <figure class="media media--round media--offset" data-reveal data-parallax="-60">
+        <img src="assets/img/familia-riendo.jpg" alt="Dos jóvenes riendo en medio de un campo florido" loading="lazy" width="1200" height="800">
+      </figure>
+      <div class="badge-float badge-float--community" data-parallax="-45">
+        <b>♥ 18</b><span>“a mí también me funcionó”</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TECNOLOGÍA ================= -->
+<section class="section tech">
+  <div class="container">
+    <div class="section__head">
+      <span class="eyebrow" data-reveal>Bajo el capó</span>
+      <h2 class="h2" data-reveal>Construida con herramientas abiertas <em>y gratuitas.</em></h2>
+    </div>
+    <div class="tech__grid">
+      <div class="tech__card" data-reveal><b>Flutter 3 · Dart</b><span>App Android nativa, Riverpod y go_router. Tipografía Quicksand, botones de 56 px y contraste para sol directo.</span></div>
+      <div class="tech__card" data-reveal><b>Supabase</b><span>Auth anónima, Postgres con RLS, Storage para fotos y videos, realtime en el muro y Edge Functions opcionales.</span></div>
+      <div class="tech__card" data-reveal><b>Groq · Gemini</b><span>Chat y visión con Llama 4 Scout y Gemini 2.5 Flash. Claves opcionales, editables desde Ajustes.</span></div>
+      <div class="tech__card" data-reveal><b>Open-Meteo</b><span>Clima sin clave: temperatura, humedad del suelo, UV, viento, lluvia y pronóstico horario.</span></div>
+      <div class="tech__card" data-reveal><b>Sensores del teléfono</b><span>Canal nativo Kotlin para luz ambiente, temperatura, humedad y presión cuando el equipo los tiene.</span></div>
+      <div class="tech__card" data-reveal><b>Modo local</b><span>Funciona completa sin claves ni internet; caché local y sincronización al volver la señal.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DESCARGA ================= -->
+<section class="section download" id="descargar">
+  <div class="container">
+    <div class="download__card" data-reveal>
+      <div class="download__bg" aria-hidden="true"></div>
+      <div class="download__copy">
+        <span class="eyebrow eyebrow--light">Descarga gratuita · Android</span>
+        <h2 class="h2">Lleva Huerto Vecino <em>a tu teléfono.</em></h2>
+        <p>Instala el APK directamente, sin tienda. Es la versión 1.0.0 compilada en modo release; funciona en Android 8.0 o superior.</p>
+        <a class="btn btn--light btn--xl" id="downloadBtn" href="https://github.com/EdwinCar/huerto-vecino-landing/releases/latest/download/app-release.apk" download="HuertoVecino-1.0.0.apk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Descargar el APK
+          <small class="btn__meta" id="apkSize">74 MB</small>
+        </a>
+        <dl class="download__meta">
+          <div><dt>Paquete</dt><dd>bo.huertovecino.app</dd></div>
+          <div><dt>Versión</dt><dd>1.0.0 (1)</dd></div>
+          <div><dt>Mínimo</dt><dd>Android 8.0 (API 26)</dd></div>
+          <div><dt>SHA-1</dt><dd class="mono" id="apkSha">57fdd8c2…da38b</dd></div>
+        </dl>
+      </div>
+      <div class="download__side">
+        <div class="qr">
+          <div id="qrcode" aria-label="Código QR para descargar el APK desde el teléfono"></div>
+          <span>Escanea desde tu teléfono</span>
+        </div>
+        <ol class="install">
+          <li><b>1</b>Descarga el archivo APK.</li>
+          <li><b>2</b>Ábrelo y permite “instalar apps de origen desconocido” si Android lo pide.</li>
+          <li><b>3</b>Abre Huerto Vecino: Sami te saluda y registra tu hogar en un minuto.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section faq" id="faq">
+  <div class="container faq__inner">
+    <div class="section__head section__head--left">
+      <span class="eyebrow" data-reveal>Preguntas frecuentes</span>
+      <h2 class="h2" data-reveal>Antes de sembrar, <em>lo que todos preguntan.</em></h2>
+    </div>
+    <div class="accordion" data-reveal>
+      <details open>
+        <summary>¿Necesito internet para usar la app?<i></i></summary>
+        <p>No. Huerto Vecino funciona completa en modo local: plan de cuidados, alarmas, guías, recetario y chat básico con Sami. Con internet se activan el diagnóstico con IA de visión, el muro del barrio en tiempo real y el clima de Open-Meteo.</p>
+      </details>
+      <details>
+        <summary>¿Cuesta algo? ¿Tiene anuncios?<i></i></summary>
+        <p>Es gratuita y sin anuncios. Los servicios de IA que usa (Groq y Gemini) tienen planes gratuitos; además puedes escribir tus propias claves en Ajustes sin recompilar.</p>
+      </details>
+      <details>
+        <summary>¿Qué teléfono necesito?<i></i></summary>
+        <p>Cualquier Android 8.0 o superior con cámara. Si el equipo tiene sensores de luz, temperatura o humedad, la app los usa; si no, toma los datos del clima abierto de tu zona.</p>
+      </details>
+      <details>
+        <summary>¿Cómo instalo un APK fuera de la tienda?<i></i></summary>
+        <p>Descarga el archivo, ábrelo desde las notificaciones o el gestor de archivos y acepta el permiso “instalar apps de origen desconocido” para tu navegador. Puedes verificar el archivo con el SHA-1 publicado en esta página.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa con mis fotos y datos?<i></i></summary>
+        <p>La app usa sesión anónima: el identificador del hogar es el único dato de cuenta. Las fotos del diagnóstico se envían al proveedor de IA solo para analizarlas y las publicaciones del muro se guardan en Supabase con reglas de acceso por fila.</p>
+      </details>
+      <details>
+        <summary>¿Qué son los paquetes Autónomo, Híbrido e Integral?<i></i></summary>
+        <p>Autónomo: solo la app. Híbrido: app más visita de un técnico cuando un caso no mejora. Integral: visitas periódicas al huerto. Se elige en el registro y se puede cambiar después.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="brand" href="#inicio">
+        <span class="brand__mark"><svg viewBox="0 0 108 108" aria-hidden="true"><path fill="currentColor" d="M54,22 C40,22 30,34 30,50 C30,66 44,80 54,86 C64,80 78,66 78,50 C78,34 68,22 54,22 Z"/><path fill="none" stroke="#E3EFDC" stroke-width="4" stroke-linecap="round" d="M54,30 L54,84 M54,46 L40,40 M54,58 L68,52 M54,70 L42,64"/></svg></span>
+        <span class="brand__text">Huerto<b>Vecino</b></span>
+      </a>
+      <p>Huertos urbanos asistidos con IA, sensores y comunidad para las familias de Koani y Alto Irpavi, La Paz.</p>
+    </div>
+    <div>
+      <b>Explora</b>
+      <a href="#funciones">Qué hace</a>
+      <a href="#sami">Sami</a>
+      <a href="#especies">Especies</a>
+      <a href="#descargar">Descargar APK</a>
+    </div>
+    <div>
+      <b>Proyecto</b>
+      <a href="https://github.com/EdwinCar/huerto-vecino-landing" target="_blank" rel="noopener" id="repoLink">Código en GitHub</a>
+      <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
+      <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+      <a href="https://flutter.dev" target="_blank" rel="noopener">Flutter</a>
+    </div>
+    <div class="footer__credits">
+      <b>Fotografías</b>
+      <p>Imágenes de <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> bajo su licencia libre. Las ilustraciones y la interfaz pertenecen al proyecto Huerto Vecino.</p>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© <span id="year">2026</span> Huerto Vecino · La Paz, Bolivia</span>
+    <span>Hecho con cariño a 3.600 m</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
